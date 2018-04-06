@@ -37,7 +37,7 @@ class ReadThreadsTest extends TestCase
     /** @test */
     public function a_user_can_read_replies_that_are_associated_with_a_thread()
     {
-        $reply = factory('App\Reply')->create(['thread_id' => $this->thread->id]);
+        $reply = create('App\Reply', ['thread_id' => $this->thread->id]);
 
 
         // One line it instead of splitting it up. I prefer splitting it up I think.
