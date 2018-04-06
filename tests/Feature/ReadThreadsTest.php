@@ -29,7 +29,7 @@ class ReadThreadsTest extends TestCase
     /** @test */
     public function a_user_can_read_a_single_thread()
     {
-        $response = $this->get('/threads/'. $this->thread->id);
+        $response = $this->get($this->thread->path());
 
         $response->assertSee($this->thread->title);
     }
@@ -42,7 +42,7 @@ class ReadThreadsTest extends TestCase
 
         // One line it instead of splitting it up. I prefer splitting it up I think.
         // It's more explicit.
-        $this->get('/threads/'. $this->thread->id)
+        $this->get($this->thread->path())
             ->assertSee($reply->body);
 
 
