@@ -36,12 +36,14 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="/threads">All Threads</a></li>
 
+                        <li><a class="nav-link" href="/threads/create">New Thread</a></li>
+
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false">Channels <span class="caret"></span></a>
 
                             <ul class="dropdown-menu">
-                                @foreach(App\Channel::all() as $channel)
+                                @foreach($channels as $channel)
                                     <li><a class="dropdown-item" href="/threads/{{ $channel->slug }}">{{ $channel->name }}</a></li>
                                 @endforeach
                             </ul>
